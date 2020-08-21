@@ -1,0 +1,4 @@
+[15-Aug-2020 15:35:34 Asia/Calcutta] PHP Fatal error:  Call to a member function result() on null in /home3/thelij7p/public_html/admin/application/views/admin/productEntry.php on line 77
+[15-Aug-2020 15:35:51 Asia/Calcutta] PHP Fatal error:  Call to a member function result() on null in /home3/thelij7p/public_html/admin/application/views/admin/productEntry.php on line 77
+[15-Aug-2020 15:38:28 Asia/Calcutta] PHP Fatal error:  Call to a member function result() on null in /home3/thelij7p/public_html/admin/application/views/admin/productEntry.php on line 77
+[15-Aug-2020 15:38:35 Asia/Calcutta] PHP Fatal error:  Call to a member function result() on null in /home3/thelij7p/public_html/admin/application/views/admin/productEntry.php on line 77
