@@ -1,0 +1,1 @@
+<h1>Privacy Policy for The Lifestyles App</h1>
