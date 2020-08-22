@@ -17,7 +17,7 @@
 | environments.
 |
 */
-$config['base_url'] = 'http://thelifestylesapp.com/admin/';
+$config['base_url'] = 'https://thelifestylesapp.com/admin/';
 
 /*
 |--------------------------------------------------------------------------

@@ -145,9 +145,11 @@
                                                     </div>
                                                 </li>
                                                 <li>
+                                                    
                                                     <div class="radio-option paypal">
-                                                        <input type="radio" name="onlinepay" id="op" value="off"  onClick="JavaScript:radio_input('https://securegw.paytm.in/theia/processTransaction')">
-                                                        <label for="op">Online pay<span class="small-text"></span></label>
+                                                       <!-- <input type="radio" name="onlinepay" id="op" value="off"  onClick="JavaScript:radio_input('https://securegw.paytm.in/theia/processTransaction')">-->
+                                                        <a href="https://securegw.paytm.in/theia/processTransaction">
+                                                        <label for="op">Online pay<span class="small-text"></span></label></a>
                                                     </div>
                                                 </li>
                                             </ul>

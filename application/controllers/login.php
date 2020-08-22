@@ -1,7 +1,10 @@
 <?php
 class login extends CI_Controller {
+
+
 public function registration(){
-	
+	echo "1";
+	exit();
 	$name=$this->input->post("name");
 	//echo $name;
 	$mobile=$this->input->post("mobile");

@@ -53,6 +53,7 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('registration');
 	}
+
 	public function cart()
 	{
 		$check=$this->session->userdata('uname');
