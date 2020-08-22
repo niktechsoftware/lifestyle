@@ -65,7 +65,7 @@ class Welcome extends CI_Controller {
 	{
 	    $uric=$this->uri->segment("3");
 	    //echo $uric;
-	    $this->db->where("id",$uric);
+	    $this->db->where("sub_category",$uric);
 	   $cat=$this->db->get("stock_products");
          	$data['uriv']=$cat;
          	//print_r($data);

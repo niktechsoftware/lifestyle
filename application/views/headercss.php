@@ -27,5 +27,6 @@
 
   <!-- Theme css -->
   <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/color2.css" media="screen" id="color">
-  
+  <script src="<?php echo base_url();?>assets/js/jquery-3.3.1.min.js"></script>
+
 </head>

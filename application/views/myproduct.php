@@ -44,7 +44,7 @@
                         <a href="javascript:void(0)" title="Add to Wishlist">
                           <i class="ti-heart" aria-hidden="true">Like</i>
                         </a>
-                         <a href="<?php echo base_url();?>index.php/welcome/saleproduct/<?php echo $row->id;?>" >
+                         <a href="<?php echo base_url();?>index.php/welcome/orderpro/<?php echo $row->id;?>" >
                           <i class="ti-search" aria-hidden="true">View</i>
                         </a>
                        
