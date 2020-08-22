@@ -25,7 +25,7 @@
     <div class="custom-container">
         <div class="checkout-page contact-page">
             <div class="checkout-form">
-                <form>
+                <form action="<?php echo base_url();?>index.php/login/billing" method="post">
                     <div class="row">
                         <div class="col-lg-6 col-sm-12 col-xs-12">
                             <div class="checkout-title">
@@ -43,50 +43,48 @@
                                 <div class="row check-out ">
 
                                     <div class="form-group col-md-6 col-sm-6 col-xs-12">
-                                        <label>First Name</label>
-                                        <input type="text" name="field-name" value="" placeholder="">
+                                        <label>Name</label>
+                                        <input type="text" name="name" value="" placeholder="">
                                     </div>
-                                    <div class="form-group col-md-6 col-sm-6 col-xs-12">
-                                        <label>Last Name</label>
-                                        <input type="text" name="field-name" value="" placeholder="">
-                                    </div>
+                                   
                                     <div class="form-group col-md-6 col-sm-6 col-xs-12">
                                         <label class="field-label">Phone</label>
-                                        <input type="text" name="field-name" value="" placeholder="">
+                                        <input type="text" name="mobile" value="" placeholder="">
                                     </div>
                                     <div class="form-group col-md-6 col-sm-6 col-xs-12">
                                         <label class="field-label">Email Address</label>
-                                        <input type="text" name="field-name" value="" placeholder="">
+                                        <input type="text" name="email" value="" placeholder="">
                                     </div>
-                                    <div class="form-group col-md-12 col-sm-12 col-xs-12">
-                                        <label class="field-label">Country</label>
-                                        <select>
-                                            <option>India</option>
-                                            <option>South Africa</option>
-                                            <option>United State</option>
-                                            <option>Australia</option>
-                                        </select>
+                                    <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                                        <label class="field-label">Password</label>
+                                        <input type="text" name="password" value="" placeholder="">
                                     </div>
+									
                                     <div class="form-group col-md-12 col-sm-12 col-xs-12">
                                         <label class="field-label">Address</label>
-                                        <input type="text" name="field-name" value="" placeholder="Street address">
+                                        <input type="text" name="address" value="" placeholder="Street address">
                                     </div>
-                                    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+									 <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                                        <label class="field-label">Alternate Mobile</label>
+                                        <input type="text" name="number" value="" placeholder="">
+                                    </div>
+                                    <div class="form-group col-md-6 col-sm-6 col-xs-12">
                                         <label class="field-label">Town/City</label>
-                                        <input type="text" name="field-name" value="" placeholder="">
+                                        <input type="text" name="city" value="" placeholder="">
                                     </div>
-                                    <div class="form-group col-md-12 col-sm-6 col-xs-12">
-                                        <label class="field-label">State / County</label>
-                                        <input type="text" name="field-name" value="" placeholder="">
+                                    <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                                        <label class="field-label">State</label>
+                                        <input type="text" name="state" value="" placeholder="">
                                     </div>
-                                    <div class="form-group col-md-12 col-sm-6 col-xs-12">
-                                        <label class="field-label">Postal Code</label>
-                                        <input type="text" name="field-name" value="" placeholder="">
+                                    <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                                        <label class="field-label">Pin Code</label>
+                                        <input type="text" name="pincode" value="" placeholder="">
                                     </div>
                                    <!-- <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <input type="checkbox" name="shipping-option" id="account-option"> &ensp;
                                         <label for="account-option">Create An Account?</label>
                                     </div>-->
+									<div class="text-right"><button class="btn-normal btn">Submit</button></div>
                                 </div>
                             </div>
                         </div>
@@ -126,29 +124,30 @@
                                 <div class="payment-box">
                                     <div class="upper-box">
                                         <div class="payment-options">
+										<script>
+										function radio_input(url){										
+										window.location.href =  ''  + url 
+										}
+											</script>
+
                                             <ul>
+                                           
                                                 <li>
                                                     <div class="radio-option">
-                                                        <input type="radio" name="payment-group" id="payment-1" checked="checked">
-                                                        <label for="payment-1">Check Payments<span class="small-text">Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</span></label>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="radio-option">
-                                                        <input type="radio" name="payment-group" id="payment-2">
-                                                        <label for="payment-2">Cash On Delivery<span class="small-text">Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</span></label>
+                                                        <input type="radio" name="cod" id="cod" value="off"  onClick="JavaScript:radio_input('cod')">
+                                                        <label for="cod">Cash On Delivery<span class="small-text">Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</span></label>
                                                     </div>
                                                 </li>
                                                 <li>
                                                     <div class="radio-option paypal">
-                                                        <input type="radio" name="payment-group" id="payment-3">
-                                                        <label for="payment-3">Online pay<span class="image"><img src="assets/images/paypal.html" alt=""></span></label>
+                                                        <input type="radio" name="onlinepay" id="op" value="off"  onClick="JavaScript:radio_input('https://securegw.paytm.in/theia/processTransaction')">
+                                                        <label for="op">Online pay<span class="small-text"></span></label>
                                                     </div>
                                                 </li>
                                             </ul>
                                         </div>
                                     </div>
-                                    <div class="text-right"><a href="<?php echo base_url();?>index.php/welcome/ordernow" class="btn-normal btn">Place Order</a></div>
+                                   <!-- <div class="text-right"><button class="btn-normal btn">Place Order</button></div>-->
                                 </div>
                             </div>
                         </div>

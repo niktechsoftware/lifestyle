@@ -28,4 +28,8 @@ function insertdata($data){
 		}
 		
 	}
+	public function billing($data){
+		$this->db->insert("billing_details",$data);
+		return true;
+	}
 }
