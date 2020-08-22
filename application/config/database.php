@@ -49,8 +49,8 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'thelij7p_admin';
-$db['default']['password'] = '!@Sardar@12';
+$db['default']['username'] = 'root';
+$db['default']['password'] = '';
 $db['default']['database'] = 'thelij7p_admin';
 $db['default']['dbdriver'] = 'mysqli';
 $db['default']['dbprefix'] = '';

@@ -29,9 +29,45 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('contact');
 	}
+	public function login()
+	{
+		$this->load->view('login');
+	}
+	public function wishlist()
+	{
+		$this->load->view('wishlist');
+	}
+	public function registration()
+	{
+		$this->load->view('registration');
+	}
+	public function cart()
+	{
+		$this->load->view('cart');
+	}
+	public function orderlist()
+	{
+		$this->load->view('orderlist');
+		}
+		public function profile()
+	{
+		$this->load->view('profile');
+		}
+		public function forgetpassword()
+	{
+		$this->load->view('forgetpassword');
+		}
+	public function billing()
+	{
+		$this->load->view('billing');
+	}
 		public function about()
 	{
 		$this->load->view('about');
+	}
+	public function ordernow()
+	{
+		$this->load->view('ordernow');
 	}
 		public function myproduct()
 	{
@@ -84,6 +120,9 @@ class Welcome extends CI_Controller {
 	}
 	public function addcart()
 	{
+		//$ip = $this->input->ip_address();
+		//print_r($ip);
+		//exit();
 	     $uric=$this->uri->segment("3");
 	    //echo $uric;
 	    $this->db->where("id",$uric);
@@ -93,6 +132,7 @@ class Welcome extends CI_Controller {
 	}
 	public function savecart()
 	{
+
 	      $uric=$this->uri->segment("3");
 	      $mno=$this->input->post("mno");
 	   $this->db->where("mobile",$mno);
