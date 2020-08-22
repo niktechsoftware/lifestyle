@@ -84,7 +84,7 @@
                 </div>
                 <h6 class="product-title"><?php echo $row->quantity;?></h6>
                
-             <div class="product-buttons"><a href="#" class="btn btn-normal">add to cart</a> <a href="<?php echo base_url();?>index.php/welcome/orderpro/<?php echo $row->id;?>" class="btn btn-normal">Order Now</a></div>
+             <div class="product-buttons"><a href="<?php echo base_url();?>index.php/welcome/cart/<?php echo $row->id;?>" class="btn btn-normal">add to cart</a> <a href="<?php echo base_url();?>index.php/welcome/orderpro/<?php echo $row->id;?>" class="btn btn-normal">Order Now</a></div>
             </div>
           </div>
         
