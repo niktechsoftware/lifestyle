@@ -94,16 +94,18 @@
 						       
                             <div class="checkout-details theme-form  section-big-mt-space">
 							
-                                <div class="order-box">
+                                
+                               <div class="order-box">
+                                     <?php  $i=1;foreach($product->result() as $row):?>
                                     <div class="title-box">
                                         <div>Product <span>Total</span></div>
                                     </div>
                                     <ul class="qty">
-                                        <li>Pink Slim Shirt × 1 <span>$25.10</span></li>
-                                        <li>SLim Fit Jeans × 1 <span>$555.00</span></li>
+                                        <li><?php echo $row->name;?> <span><?php echo $row->selling_price1;?></span></li>
+                                       
                                     </ul>
                                     <ul class="sub-total">
-                                        <li>Subtotal <span class="count">$380.10</span></li>
+                                        <li>Subtotal <span class="count"><?php echo $row->selling_price1;?></span></li>
                                         <li>Shipping
                                             <div class="shipping">
                                                 <div class="shopping-option">
@@ -118,15 +120,18 @@
                                         </li>
                                     </ul>
                                     <ul class="total">
-                                        <li>Total <span class="count">$620.00</span></li>
+                                        <li>Total <span class="count"><?php echo $row->selling_price1;?></span></li>
                                     </ul>
+                                      <?php $i++; ?>
+            
+            </div>                                  <?php endforeach;?>
                                 </div>
                                 <div class="payment-box">
                                     <div class="upper-box">
                                         <div class="payment-options">
 										<script>
 										function radio_input(url){										
-										window.location.href =  ''  + url 
+										window.location.href =  ''  +url 
 										}
 											</script>
 
@@ -134,8 +139,9 @@
                                            
                                                 <li>
                                                     <div class="radio-option">
-                                                        <input type="radio" name="cod" id="cod" value="off"  onClick="JavaScript:radio_input('cod')">
-                                                        <label for="cod">Cash On Delivery<span class="small-text">Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</span></label>
+                                                      <!--  <input type="radio" name="cod" id="cod" value="off"  onClick="JavaScript:radio_input('cod')">-->
+                                                      <a href="<?php echo base_url();?>index.php/welcome/cod/<?php echo $row->id;?>">
+                                                        <label for="cod">Cash On Delivery<span class="small-text">Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</span></label> </a>
                                                     </div>
                                                 </li>
                                                 <li>

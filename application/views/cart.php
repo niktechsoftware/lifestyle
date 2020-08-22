@@ -82,6 +82,10 @@ $pinfo=$this->db->get("stock_products");
                       
                         <td>
                             <h2 class="td-color"><?php echo $row->selling_price1;?></h2></td>
+                            <td>
+                                
+                                <h2 class="td-color"> <a href="<?php echo base_url();?>index.php/welcome/billing/<?php echo $row->id;?>" >Buy Now</a>
+                            </td>
                     </tr>
                     </tbody>
 
@@ -100,7 +104,7 @@ $pinfo=$this->db->get("stock_products");
             </div>
         </div>
         <div class="row cart-buttons">
-            <div class="col-12"><a href="<?php echo base_url();?>index.php/welcome/myproduct" class="btn btn-normal">continue shopping</a> <a href="<?php echo base_url();?>index.php/welcome/billing" class="btn btn-normal ml-3">check out</a></div>
+            <div class="col-12"><a href="<?php echo base_url();?>index.php/welcome/myproduct" class="btn btn-normal">continue shopping</a> <a href="#" class="btn btn-normal ml-3">check out</a></div>
         </div>
     </div>
 </section>

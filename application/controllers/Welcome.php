@@ -31,7 +31,15 @@ class Welcome extends CI_Controller {
 	}
 	public function cod()
 	{
-		$this->load->view('cod');
+
+ $uric=$this->uri->segment("3");
+      $this->db->where("id",$uric);
+	   $cat=$this->db->get("stock_products");
+         	$data['uriv']=$cat;
+         	//print_r($data);
+
+
+		$this->load->view('cod',$data);
 	}
 	public function login()
 	{
@@ -86,7 +94,12 @@ $data=array(
 		}
 	public function billing()
 	{
-		$this->load->view('billing');
+		  $uric=$this->uri->segment("3");
+		  $this->db->where("id",$uric);
+
+     $pro=$this->db->get("stock_products");
+    $data['product']=$pro;
+		$this->load->view('billing',$data);
 	}
 		public function about()
 	{
