@@ -29,9 +29,85 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('contact');
 	}
+	public function cod()
+	{
+
+ $uric=$this->uri->segment("3");
+      $this->db->where("id",$uric);
+	   $cat=$this->db->get("stock_products");
+         	$data['uriv']=$cat;
+         	//print_r($data);
+
+
+		$this->load->view('cod',$data);
+	}
+	public function login()
+	{
+		$this->load->view('login');
+	}
+	public function wishlist()
+	{
+		$this->load->view('wishlist');
+	}
+	public function registration()
+	{
+		$this->load->view('registration');
+	}
+	public function cart()
+	{
+		$check=$this->session->userdata('uname');
+		if(!$check){
+			//echo $is_login;
+			redirect(base_url()."index.php/welcome/login");
+		}
+		else{
+ $uric=$this->uri->segment("3");
+	  
+	    $this->db->where("name",$check);
+	   $cat=$this->db->get("costumer")->row();
+         	//$data['uriv']=$cat;
+         	//print_r($data);
+//echo $cat->id;
+$data=array(
+"cust_id"=>$cat->id,
+"product_id"=>$uric,
+"status"=>1,
+"client_code"=>2,
+"date"=> date("Y-m-d")
+);
+	$this->db->insert("like_product",$data);		//redirect(base_url()."welcome/cart");
+			$this->load->view('cart');
+		}
+		
+	}
+	public function orderlist()
+	{
+		$this->load->view('orderlist');
+		}
+		public function profile()
+	{
+		$this->load->view('profile');
+		}
+		public function forgetpassword()
+	{
+		$this->load->view('forgetpassword');
+		}
+	public function billing()
+	{
+		  $uric=$this->uri->segment("3");
+		  $this->db->where("id",$uric);
+
+     $pro=$this->db->get("stock_products");
+    $data['product']=$pro;
+		$this->load->view('billing',$data);
+	}
 		public function about()
 	{
 		$this->load->view('about');
+	}
+	public function ordernow()
+	{
+		$this->load->view('ordernow');
 	}
 		public function myproduct()
 	{
@@ -65,7 +141,7 @@ class Welcome extends CI_Controller {
 	{
 	    $uric=$this->uri->segment("3");
 	    //echo $uric;
-	    $this->db->where("id",$uric);
+	    $this->db->where("sub_category",$uric);
 	   $cat=$this->db->get("stock_products");
          	$data['uriv']=$cat;
          	//print_r($data);
@@ -84,6 +160,9 @@ class Welcome extends CI_Controller {
 	}
 	public function addcart()
 	{
+		//$ip = $this->input->ip_address();
+		//print_r($ip);
+		//exit();
 	     $uric=$this->uri->segment("3");
 	    //echo $uric;
 	    $this->db->where("id",$uric);
@@ -93,6 +172,7 @@ class Welcome extends CI_Controller {
 	}
 	public function savecart()
 	{
+
 	      $uric=$this->uri->segment("3");
 	      $mno=$this->input->post("mno");
 	   $this->db->where("mobile",$mno);

@@ -28,7 +28,7 @@
      
                                <?php foreach($uriv->result() as $row):?>
           <div class="col-lg-4 col-xs-12">
-            <div class="quick-view-img"><img  <img src="<?php echo base_url()?>admin/assets/images/client_gallery/2/product/<?php echo $row->file1; ?>"  alt="" class="img-fluid zoom"  height="400"></div>
+            <div class="quick-view-img"><img   src="<?php echo base_url()?>admin/assets/images/client_gallery/2/product/<?php echo $row->file1; ?>"  alt="" class="img-fluid zoom"  height="400"></div>
           </div>
           <div class="col-lg-6 rtl-text">
             <div class="product-right">

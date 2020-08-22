@@ -126,28 +126,12 @@ function imageZoom(imgID, resultID) {
 <!--discount banner end-->
 
 <!--tab product-->
-<section class="section-pt-space" >
-  <div class="tab-product-main">
-    <div class="tab-prodcut-contain">
-      <ul class="tabs tab-title">
-           <?php
-           $i=1;
-           $this->db->where("client_code",2);
-         $cat=$this->db->get("category");
-          foreach($cat->result() as $row):?>
-        <li class="current"><a href="tab-<?php echo $i;?>">
-            <?php $data['cat']=$row->id;?>
-         <?php echo $row->name;?></a></li>
-        <?php $i++; ?>
-        <?php endforeach;?>
-        <!--<li class=""><a href="tab-6">JOGGERS</a></li>-->
-      </ul>
-    </div>
-  </div>
-</section>
+
 <!--tab product-->
 <!-- slider tab  -->
-<?php $this->load->view('slidertab',$data);?>
+<?php 
+$data['client_code']=2;
+$this->load->view('slidertab',$data);?>
 <!-- slider tab end -->
 <!--collection banner start-->
 <section class="collection-banner section-pb-space ">
@@ -158,8 +142,7 @@ function imageZoom(imgID, resultID) {
           <div class="collection-img">
            
   <img  src="<?php echo base_url();?>assets/images/layout-2/collection-banner/7.jpg" class="bg-img  " alt="banner">
-  
-</div> 
+
           </div>
           <div class="collection-banner-contain ">
             <div class="sub-contain">
@@ -172,13 +155,13 @@ function imageZoom(imgID, resultID) {
               </div>
             </div>
           </div>
+          </div> 
         </div>
       </div>
     </div>
-  </div>
+  
 </section>
 <!--collection banner end-->
-
 <!--deal banner start-->
 <section class="deal-banner">
   <div class="container">
@@ -220,7 +203,7 @@ function imageZoom(imgID, resultID) {
 <!--collection banner end-->
 
 <!--hot deal start-->
-<?php $this->load->view('hotdeal');?>
+<?php //$this->load->view('hotdeal');?>
 <!--hot deal start-->
 
 <!--testimonial start-->
@@ -231,8 +214,7 @@ function imageZoom(imgID, resultID) {
 <div class="title1 section-my-space">
   <h4>Special Products</h4>
 </div>
-<!--title end-->
-
+title end-->
 <!--product start
 <?php // $this->load->view('product');?>
 product end-->

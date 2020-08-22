@@ -1,5 +1,7 @@
 function imageZoom(imgID, resultID) {
   var img, lens, result, cx, cy;
+ // 
+
   img = document.getElementById(imgID);
   result = document.getElementById(resultID);
   /*create lens:*/
