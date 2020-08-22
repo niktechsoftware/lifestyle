@@ -47,7 +47,30 @@ class Welcome extends CI_Controller {
 	}
 	public function cart()
 	{
-		$this->load->view('cart');
+		$check=$this->session->userdata('uname');
+		if(!$check){
+			//echo $is_login;
+			redirect(base_url()."index.php/welcome/login");
+		}
+		else{
+ $uric=$this->uri->segment("3");
+	  
+	    $this->db->where("name",$check);
+	   $cat=$this->db->get("costumer")->row();
+         	//$data['uriv']=$cat;
+         	//print_r($data);
+//echo $cat->id;
+$data=array(
+"cust_id"=>$cat->id,
+"product_id"=>$uric,
+"status"=>1,
+"client_code"=>2,
+"date"=> date("Y-m-d")
+);
+	$this->db->insert("like_product",$data);		//redirect(base_url()."welcome/cart");
+			$this->load->view('cart');
+		}
+		
 	}
 	public function orderlist()
 	{
@@ -105,7 +128,7 @@ class Welcome extends CI_Controller {
 	{
 	    $uric=$this->uri->segment("3");
 	    //echo $uric;
-	    $this->db->where("id",$uric);
+	    $this->db->where("sub_category",$uric);
 	   $cat=$this->db->get("stock_products");
          	$data['uriv']=$cat;
          	//print_r($data);

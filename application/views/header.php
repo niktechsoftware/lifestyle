@@ -37,7 +37,7 @@
                   <li><a href="#">Wish List</a></li>
                   <li><a href="#">Records</a></li>
                   <li><a href="#">Logout</a></li>
-                </ul
+                </ul>
               </div>
              
             </div>
